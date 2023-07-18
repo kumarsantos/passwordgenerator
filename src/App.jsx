@@ -41,6 +41,8 @@ function App() {
     JSON.parse(localStorage.getItem('prevPasswordList')) || []
   );
 
+
+
   const handleChange = (e) => {
     const { name, value, checked } = e.target;
     if (name === 'passwordLength') {
@@ -50,6 +52,9 @@ function App() {
     }
   };
 
+
+
+
   const handleCopy = (idx) => {
     setIsCopied(idx);
     navigator.clipboard
@@ -57,11 +62,15 @@ function App() {
       .then(() => setHasCopied(true));
   };
 
+
+
   useEffect(() => {
     setTimeout(() => {
       setHasCopied(false);
     }, 2000);
   }, [hasCopied]);
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -84,6 +93,8 @@ function App() {
     );
   };
 
+
+
   const handleClear = () => {
     setPrevPasswordList([]);
     localStorage.removeItem('prevPasswordList');
@@ -95,6 +106,8 @@ function App() {
     });
   };
 
+
+  
   return (
     <div
       style={{
